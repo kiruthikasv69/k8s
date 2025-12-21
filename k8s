@@ -1,0 +1,63 @@
+k8s 
+
+deployment
+------------
+its for stateless  app 
+replicsa set is subset of deployment 
+here all  pods share same port and same container image  
+==============================================================================
+
+node port vs cluster ip 
+------------------------
+node  port 
+exposes node ip not pod ip 
+pod ip is dynamic 
+Exposes the service on Node IP
+
+Fixed port range: 30000–32767
+
+Internet traffic comes to Node IP, not Pod IP
+
+In EKS:
+---------
+Worker nodes usually have private IPs
+
+NodePort is typically accessed via:
+
+LoadBalancer
+
+Ingress
+
+Direct NodePort internet access is not recommended
+
+
+Service  and cluster ip
+--------------------------
+❓ “Service is used to assign static IP, right?”
+✅ Yes — but NOT to Pods
+
+👉 Service assigns a static IP to itself
+❌ Service does NOT give IPs to Pods
+
+🔍 What exactly gets the static IP?
+🔹 Service
+
+Gets a ClusterIP (stable, virtual IP)
+
+This IP:
+
+Stays same for the life of the Service
+
+Is used as a fixed entry point
+
+
+Egress
+Pod
+   ↓
+Service / Direct IP
+   ↓
+NAT Gateway / Firewall / Proxy
+   ↓
+Internet / External Service
+
+
