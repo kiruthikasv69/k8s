@@ -90,3 +90,28 @@ Terminates the encrypted connection
 Converts traffic to plain HTTP internally
 
 📌 This is safe inside a private cluster network
+
+
+
+Node Selector  is for environment isolation
+---------------
+
+NodeSelector in simple words 
+
+NodeSelector lets you choose which nodes a pod can run on, based on node labels.
+
+Nodes can be labeled with environments like env=dev, env=test, env=prod.
+
+Pods use NodeSelector to specify which labeled nodes they are allowed to run on.
+
+This ensures pods start only on the nodes of the correct environment.
+
+🔹 Example
+
+Node labels:
+
+kubectl label nodes node1 env=prod
+kubectl label nodes node2 env=dev
+
+
+
