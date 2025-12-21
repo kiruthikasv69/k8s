@@ -10,6 +10,7 @@ here all  pods share same port and same container image
 node port vs cluster ip 
 ------------------------
 node  port 
+-------------
 exposes node ip not pod ip 
 pod ip is dynamic 
 Exposes the service on Node IP
@@ -59,6 +60,16 @@ Service / Direct IP
 NAT Gateway / Firewall / Proxy
    ↓
 Internet / External Service
+
+Cluster IP
+-----------
+Pod A → ClusterIP (Service) → Pod B
+Pod A never needs to know Pod B’s dynamic IP
+
+ClusterIP gives a stable entry point
+
+Works for internal communication only
+
 
 ======================================================================================================================
 SSL certificate |
