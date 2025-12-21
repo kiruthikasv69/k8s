@@ -60,4 +60,22 @@ NAT Gateway / Firewall / Proxy
    ↓
 Internet / External Service
 
+======================================================================================================================
+SSL certificate |
 
+Provides encryption to webiste , api , db etc 
+
+
+Ingress controller performs ssl/tls termination 
+
+🔹 What SSL/TLS termination means
+
+Decrypting encrypted HTTPS traffic at a trusted point
+
+It:
+
+Terminates the encrypted connection
+
+Converts traffic to plain HTTP internally
+
+📌 This is safe inside a private cluster network
