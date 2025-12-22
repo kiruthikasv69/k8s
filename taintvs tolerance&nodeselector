@@ -1,0 +1,43 @@
+Node Selector
+-------------
+NodeSelector is a simple scheduling mechanism that places pods on nodes matching specific labels.
+
+NodeSelector is used to run a pod on nodes based on the labels specified on the nodes.
+
+🧠 Even simpler (one line)
+
+NodeSelector tells Kubernetes to schedule a pod only on nodes with matching labels.
+===========================================================================================
+
+
+Taint means “restricted access”
+-----------------------------------------------
+High CPU / high memory nodes are:
+
+Node type / instance size
+
+Resource capacity
+
+A tainted node is a specially reserved node that does not accept normal pods unless they explicitly tolerate the taint.
+
+Usecase 
+Databases
+
+ML jobs
+
+Heavy batch processing
+
+Why?
+
+These apps need high CPU / memory
+
+Normal apps should not run there
+
+
+Taint and tolerants 
+-----------------------
+Taints and tolerations are used to reserve specific nodes for specific workloads and prevent unwanted pods from running on them.
+
+Taints are applied on nodes to repel pods, and tolerations are applied on pods to allow them to be scheduled on tainted nodes. This helps reserve nodes for specific workloads.
+
+
