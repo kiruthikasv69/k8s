@@ -1,0 +1,66 @@
+node affinity
+--------------
+Node affinity is used to control pod placement based on node labels with both strict and preferred rules. 
+It is commonly used for workload separation, hardware-specific scheduling, availability zone control, and cost optimization.
+
+nodeSelector = must
+node affinity = must or prefer
+
+Node affinity has two types: required and preferred. 
+Required node affinity enforces strict scheduling rules, while preferred node affinity provides flexible placement based on node labels.
+Both are evaluated only during scheduling and ignored during execution.
+
+Scheduling = deciding which NODE will run the POD
+
+Happens when:
+
+Pod is created
+
+Pod is Pending
+
+No node is assigned yet
+
+Who does it?
+
+kube-scheduler
+==================================================================
+Execution = pod is already running on a node
+
+Happens after:
+
+Scheduler assigns a node
+
+kubelet starts the pod
+
+What happens here?
+
+Image is pulled (if not present)
+
+Container starts
+
+App runs
+
+===================================================================================
+Scheduling is the phase where Kubernetes decides which node a pod should run on. 
+Execution refers to the runtime phase after the pod is assigned to a node and the containers are running. 
+Node affinity rules are applied only during scheduling and ignored during execution.
+
+Pod created
+   ↓
+Scheduling (choose node)
+   ↓
+Execution (pull image → start container → run app)
+
+Types 
+requiredDuringSchedulingIgnoredDuringExecution
+PreferredDuringSchedulingIgnoreDuringExecution 
+
+Usecase
+--------
+📌 Use case:
+
+Cost optimization
+
+Performance preference
+
+Spot vs on-demand
