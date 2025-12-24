@@ -1,0 +1,8 @@
+config name ; 
+non sensitive infi like db names 
+
+secrets: 
+base 64 like encrypted ones, passwords
+
+pv vs pvc 
+PVC is a request from the user for (10 GB of) storage, and PV is the actual 10 GB storage that Kubernetes can provide.
