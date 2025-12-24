@@ -1,4 +1,4 @@
-config name ; 
+config map ; 
 non sensitive infi like db names 
 
 secrets: 
